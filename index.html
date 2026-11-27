@@ -568,7 +568,7 @@ function renderNav() {
   }
   const foot = el("div", { class: "navfoot" }, ...footControls());
   nav.append(foot);
-  $("#mobilefoot").replaceChildren(...footControls());
+  $("#mobilefoot").replaceChildren(...footControls().filter(Boolean));
 }
 function footControls() {
   const any = STAGES.some(s => S.out[s.id]);
